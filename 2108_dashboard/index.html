@@ -50,61 +50,92 @@
                         </button>
 
                         <div class="collapse navbar-collapse w-70 " id="navbarSupportedContent">
-
-                            <ul class="navbar-nav btn-sm justify-content-center ms-5">
-                                <li class="nav-item dropdown ">       
-                                <select class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"
-                                id="dropdownMenu">
-                                    <option selected>Cities</option>
-                                    <option value="1">Udaipur</option>
-                                    <option value="2">Vadodara</option>
-                                    <option value="3">Jaipur</option>
-                                    <option value="4">Surat</option>
-                                    <option value="5">Ahmedabad</option>
-                                    <option value="6">Pune</option>
-                                    <option value="7">Mumbai </option>
-                                    <option value="8">Shimla</option>
-                                    <option value="9">Chandigarh </option>
-                                    <option value="10">Dehradun</option>
-                                    <option value="11">Lucknow </option>
-                                    <option value="12">Agra</option>
-                                    <option value="13">Delhi</option>
-                                    <option value="14">Coimbatore</option>
-                                    <option value="15">Varanasi</option>
-                                    <option value="16">Rishikesh </option>
-                                    <option value="17">Haridwar </option>
-                                    <option value="18">Jaisalmer</option>
-                                    <option value="19">Shillong</option>
-                                    <option value="20">Srinagar</option>
-                                    <option value="21">Bhubaneswar</option>
-                                    <option value="22">Kolkata</option>
-                                    <option value="23">Madurai</option>
-                                    <option value="24">Hyderabad </option>
-                                </select>
-                                </li>
-                            </ul>
-
-                                <form class="navbar-nav w-100" role="search">
-
-                                
-                                        <div class="input-group ">
-                                            <input type="search" class="form-control " placeholder="Search...." aria-label="Search">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary rounded-right" type="button">Search</button>
+                            <div class="col-md-12  ">
+                            <div class="search_box">
+                                <form name="search_form" method="post" id="search_form" action="">
+                                    <input type="hidden" name="_token" value="IxCEnrgE55Rlfm6Fw2i3g0P49SdSPKYP4vYicFjt">
+                                    <div class="row">
+                                        <div class="col-xl-3">
+                                            <div class="selectBox">
+                                                <select name="category" class="form-control  nav-buttons p-3 m-2" id="search_category" required="">
+                                                    <option value="" selected="">Category</option>
+                                                    <option value="call-girls">Call Girls</option>
+                                                    <option value="massage">Massage</option>
+                                                    <option value="male-escorts">Male Escorts</option>
+                                                </select>
                                             </div>
                                         </div>
-                                  
-                                    
-                                
-                                  </form>
-                           
-                                 
-                             
+                                        <div class="col-xl-2">
+                                            <div class="selectBox">
+                                                <select class="form-control  nav-buttons all_state get_city p-3 m-2" id="state" required="required" name="state" onchange="populateCities()">
+                                                        <option value="" selected="selected">State</option>
+                                                        <option value="Andaman & Nicobar Islands">Andaman & Nicobar Islands</option>
+                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                        <option value="Assam">Assam</option>
+                                                        <option value="Bihar">Bihar</option>
+                                                        <option value="Chandigarh">Chandigarh</option>
+                                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                                        <option value="Dadra & Nagar Haveli">Dadra & Nagar Haveli</option>
+                                                        <option value="Daman & Diu">Daman & Diu</option>
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Goa">Goa</option>
+                                                        <option value="Gujarat">Gujarat</option>
+                                                        <option value="Haryana">Haryana</option>
+                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                        <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                                                        <option value="Jharkhand">Jharkhand</option>
+                                                        <option value="Karnataka">Karnataka</option>
+                                                        <option value="Kerala">Kerala</option>
+                                                        <option value="Lakshadweep">Lakshadweep</option>
+                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                        <option value="Maharashtra">Maharashtra</option>
+                                                        <option value="Manipur">Manipur</option>
+                                                        <option value="Meghalaya">Meghalaya</option>
+                                                        <option value="Mizoram">Mizoram</option>
+                                                        <option value="Nagaland">Nagaland</option>
+                                                        <option value="Odisha">Odisha</option>
+                                                        <option value="Puducherry">Puducherry</option>
+                                                        <option value="Punjab">Punjab</option>
+                                                        <option value="Rajasthan">Rajasthan</option>
+                                                        <option value="Sikkim">Sikkim</option>
+                                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                                        <option value="Telangana">Telangana</option>
+                                                        <option value="Tripura">Tripura</option>
+                                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                        <option value="Uttarakhand">Uttarakhand</option>
+                                                        <option value="West Bengal">West Bengal</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <div class="selectBox ">
+                                                <select name="city " class="all_cities form-control  nav-buttons p-3 m-2" id="city">
+                                                        <option value="">City</option>
+                                                </select>
+                                            </div>
+                                            <input type="hidden" name="cities" id="cities">
+                                        </div>
+                                        <div class="col-xl-3">
+                                            <div class="searchFld ">
+                                                <input name="keyword" class="form-control  nav-buttons p-3 m-2" type="text" id="search_keyword" placeholder="write more description here..." value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <div class="input_form ">
+                                                <button  type="submit"  class="form-control  nav-search  bg-primary btn p-3 m-2 rounded-pill" id="submit_search">Search<i class="bi bi-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
                         </div>
                     </nav>
                 </div>
             </div>
+        </div>
+    </div>
             <!-- row -->
             <!-- <div class="row tm-content-row tm-mt-big">
                 <div class="tm-col tm-col-big">
@@ -203,6 +234,66 @@
             </footer> -->
         </div>
     </div>
+
+
+    <script>
+        const citiesByState = {
+                   "Andaman & Nicobar Islands": ["Port Blair"],
+                   "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Tirupati"],
+                   "Arunachal Pradesh": ["Itanagar", "Naharlagun"],
+                   "Assam": ["Guwahati", "Dibrugarh", "Silchar"],
+                   "Bihar": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur"],
+                   "Chandigarh": ["Chandigarh"],
+                   "Chhattisgarh": ["Raipur", "Bilaspur", "Durg"],
+                   "Dadra & Nagar Haveli": ["Silvassa"],
+                   "Daman & Diu": ["Daman", "Diu"],
+                   "Delhi": ["New Delhi", "Delhi"],
+                   "Goa": ["Panaji", "Margao", "Mapusa"],
+                   "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
+                   "Haryana": ["Gurgaon", "Faridabad", "Panipat"],
+                   "Himachal Pradesh": ["Shimla", "Dharamshala", "Manali"],
+                   "Jammu & Kashmir": ["Srinagar", "Jammu", "Leh"],
+                   "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad"],
+                   "Karnataka": ["Bengaluru", "Mysuru", "Mangaluru"],
+                   "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode"],
+                   "Lakshadweep": ["Kavaratti"],
+                   "Madhya Pradesh": ["Bhopal", "Indore", "Gwalior"],
+                   "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+                   "Manipur": ["Imphal"],
+                   "Meghalaya": ["Shillong"],
+                   "Mizoram": ["Aizawl"],
+                   "Nagaland": ["Kohima", "Dimapur"],
+                   "Odisha": ["Bhubaneswar", "Cuttack"],
+                   "Puducherry": ["Puducherry"],
+                   "Punjab": ["Chandigarh", "Amritsar", "Ludhiana"],
+                   "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
+                   "Sikkim": ["Gangtok"],
+                   "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+                   "Telangana": ["Hyderabad", "Warangal"],
+                   "Tripura": ["Agartala"],
+                   "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi"],
+                   "Uttarakhand": ["Dehradun", "Nainital"],
+                   "West Bengal": ["Kolkata", "Siliguri", "Durgapur"]
+                };
+                       
+   function populateCities() {
+       const stateSelect = document.getElementById('state');
+       const citySelect = document.getElementById('city');
+       const selectedState = stateSelect.value;
+
+       // Clear previous city options
+       citySelect.innerHTML = '<option value="">City</option>';
+
+       if (selectedState && citiesByState[selectedState]) {
+               citiesByState[selectedState].forEach(city => {
+                       const option = document.createElement('option');
+                       option.value = city;
+                       option.textContent = city;
+                       citySelect.appendChild(option);
+               });
+       }
+                           }
+                       </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
     <script src="js/moment.min.js"></script>

@@ -196,11 +196,14 @@ ol {
   margin-bottom: 20px;
 }
 
-.form-control {
-  margin-bottom: 23px;
+.nav-buttons {
   padding: 19px 18px;
   border-radius: 0;
-  height: 50px;
+  height: 3.5rem;
+}
+
+.nav-search{
+  height: 3.5rem;
 }
 
 label {
